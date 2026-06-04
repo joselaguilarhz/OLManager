@@ -1012,8 +1012,8 @@ function UserProfilePanel({
             </button>
 
             {showAvatarPicker && (
-              <div className="absolute bottom-full left-0 z-50 mb-3 w-[21rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-white/15 bg-navy-900/95 p-4 shadow-2xl shadow-black/50 backdrop-blur-xl">
-                <div className="absolute -bottom-2 left-6 h-4 w-4 rotate-45 border-b border-r border-white/15 bg-navy-900/95" />
+              <div className="absolute left-0 top-full z-[80] mt-3 w-[21rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-white/15 bg-navy-900/95 p-4 shadow-2xl shadow-black/50 backdrop-blur-xl">
+                <div className="absolute -top-2 left-6 h-4 w-4 rotate-45 border-l border-t border-white/15 bg-navy-900/95" />
                 <div className="relative">
                   <div className="mb-3 flex items-center justify-between">
                     <p className="font-heading text-sm font-bold uppercase tracking-wider text-white">
