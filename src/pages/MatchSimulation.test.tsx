@@ -142,10 +142,6 @@ vi.mock("../components/match/LolMatchLive", () => ({
   ),
 }));
 
-vi.mock("../components/match/HalfTimeBreak", () => ({
-  default: () => <div data-testid="halftime" />,
-}));
-
 vi.mock("../components/match/LolResultScreen", () => ({
   default: ({
     onFinish,

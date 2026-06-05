@@ -26,20 +26,6 @@ export interface LolSimV1PolicyConfig {
   hybridDisengageConfidenceLow?: number;
 }
 
-export interface LolSimV1SimEvent {
-  t: number;
-  text: string;
-  type: LolSimV1EventType;
-}
-
-export interface LolSimV1TeamStats {
-  kills: number;
-  towers: number;
-  dragons: number;
-  barons: number;
-  gold: number;
-}
-
 /**
  * Runtime state subset currently consumed by LolMatchLive + render/panels.
  * NOTE: Keep aligned with fields actually read by UI, not full engine internals.
@@ -183,12 +169,4 @@ export interface LolSimV1MatchReportInput {
     red: LolSimV1MatchReportTeamStatsInput;
   };
   champions: LolSimV1MatchReportChampionInput[];
-}
-
-export interface LolSimV1ControlSnapshot {
-  sessionId: string;
-  seed: string;
-  running: boolean;
-  speed: number;
-  winner: TeamId | null;
 }

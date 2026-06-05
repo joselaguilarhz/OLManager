@@ -39,14 +39,6 @@ export const LOL_ROLE_LABELS: Record<LolRole, string> = {
   SUPPORT: "SUPPORT",
 };
 
-const POSITION_LABELS: Record<string, string> = {
-  TOP: "TOP",
-  JUNGLE: "JUNGLE",
-  MID: "MID",
-  ADC: "ADC",
-  SUPPORT: "SUPPORT",
-};
-
 const POSITION_CODES: Record<string, string> = {
   TOP: "TOP",
   JUNGLE: "JNG",
@@ -75,30 +67,6 @@ export function positionCode(position?: string | null): string {
   return (
     POSITION_CODES[normalized] || normalized.substring(0, 3).toUpperCase()
   );
-}
-
-export function translatePositionLabel(
-  translateFnOrPosition: string | ((key: string, options?: { defaultValue?: string }) => string),
-  positionOrTranslateFn?: string | ((key: string, options?: { defaultValue?: string }) => string),
-): string {
-  let translateFn: (key: string, options?: { defaultValue?: string }) => string;
-  let position: string | null | undefined;
-
-  if (typeof translateFnOrPosition === "function") {
-    translateFn = translateFnOrPosition;
-    position = positionOrTranslateFn as string | null | undefined;
-  } else if (typeof positionOrTranslateFn === "function") {
-    translateFn = positionOrTranslateFn;
-    position = translateFnOrPosition;
-  } else {
-    return translateFnOrPosition ?? "";
-  }
-
-  const canonical = canonicalPosition(position);
-
-  return translateFn(`common.positions.${canonical}`, {
-    defaultValue: POSITION_LABELS[canonical] || canonical,
-  });
 }
 
 export function translatePositionAbbreviation(
@@ -139,19 +107,6 @@ export function getPreferredPositions(player: PlayerData): string[] {
         .filter(Boolean)
         .map(canonicalPosition),
     ),
-  ];
-}
-
-/**
- * Returns 5 fixed LoL lane rows for display (replaces football pitch rows).
- */
-export function buildLaneRows(): PitchRow[] {
-  return [
-    { label: "TOP", y: "16%", positions: ["TOP"] },
-    { label: "JNG", y: "34%", positions: ["JUNGLE"] },
-    { label: "MID", y: "52%", positions: ["MID"] },
-    { label: "ADC", y: "70%", positions: ["ADC"] },
-    { label: "SUP", y: "88%", positions: ["SUPPORT"] },
   ];
 }
 

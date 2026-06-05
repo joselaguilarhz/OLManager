@@ -1,4 +1,3 @@
-export const LOL_MAP_NATIVE_SIZE = 1024;
 export const LOL_MAP_STRUCTURE_ICON_SIZE = 40;
 export const LOL_MAP_OBJECTIVE_ICON_SIZE = 48;
 export const LOL_MAP_JUNGLE_ICON_SIZE = 36;
@@ -122,13 +121,6 @@ export const STRUCTURES_LAYOUT: StructurePoint[] = [
   { id: "red-nexus", side: "red", lane: "base", label: "Red Nexus", icon: "nexus_red", x: 0.8912760416666666, y: 0.1171875 },
 ];
 
-export const NEUTRAL_OBJECTIVES_LAYOUT: NeutralObjectivePoint[] = [
-  { id: "baron-pit", label: "Baron", icon: "baron", x: 0.3274739583333333, y: 0.2981770833333333 },
-  { id: "dragon-pit", label: "Dragon", icon: "dragon", x: 0.673828125, y: 0.703125 },
-  { id: "grub-pit", label: "Void Grubs", icon: "grub", x: 0.3313802083333333, y: 0.2994791666666667 },
-  { id: "herald-area", label: "Rift Herald", icon: "riftherald", x: 0.3274739583333333, y: 0.2942708333333333 },
-];
-
 export const STRUCTURE_ICON_PATH: Record<StructureIcon, string> = {
   tower_blue: "/lol-map-icons/tower_blue.png",
   tower_red: "/lol-map-icons/tower_red.png",
@@ -151,51 +143,3 @@ export const NEUTRAL_OBJECTIVE_ICON_PATH: Record<NeutralObjectiveIcon, string> =
   grub: "/lol-map-icons/grub.png",
   riftherald: "/lol-map-icons/riftherald.png",
 };
-
-// Initial editable wall guides (normalized 0..1). These are calibration helpers.
-export const WALLS_LAYOUT: WallPolygon[] = [
-  {
-    id: "river-wall-top",
-    label: "Top River Wall",
-    closed: true,
-    points: [
-      { x: 0.33, y: 0.22 },
-      { x: 0.40, y: 0.24 },
-      { x: 0.44, y: 0.30 },
-      { x: 0.36, y: 0.31 },
-    ],
-  },
-  {
-    id: "river-wall-bot",
-    label: "Bot River Wall",
-    closed: true,
-    points: [
-      { x: 0.58, y: 0.61 },
-      { x: 0.66, y: 0.63 },
-      { x: 0.69, y: 0.70 },
-      { x: 0.61, y: 0.71 },
-    ],
-  },
-  {
-    id: "baron-pit-wall",
-    label: "Baron Pit Wall",
-    closed: true,
-    points: [
-      { x: 0.26, y: 0.24 },
-      { x: 0.33, y: 0.25 },
-      { x: 0.35, y: 0.32 },
-      { x: 0.28, y: 0.34 },
-    ],
-  },
-  {
-    id: "dragon-pit-wall",
-    label: "Dragon Pit Wall",
-    closed: true,
-    points: [
-      { x: 0.63, y: 0.64 },
-      { x: 0.71, y: 0.66 },
-      { x: 0.72, y: 0.73 },
-      { x: 0.64, y: 0.75 },
-    ],
-  },
-];

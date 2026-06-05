@@ -198,17 +198,6 @@ export interface MatchSnapshot {
   lol_scrim_prep?: LolScrimPrepPayload;
 }
 
-export interface MinuteResult {
-  minute: number;
-  phase: string;
-  events: MatchEvent[];
-  home_score: number;
-  away_score: number;
-  possession: "Home" | "Away";
-  ball_zone: string;
-  is_finished: boolean;
-}
-
 export interface RoundResultSummary {
   fixture_id: string;
   home_team_id: string;
@@ -310,19 +299,3 @@ export function getTeamTalkOptions(t: TFunction): TeamTalkOption[] {
   }));
 }
 
-export const SPEED_MS: Record<SimSpeed, number> = {
-  paused: 0,
-  slow: 2000,
-  normal: 800,
-  fast: 200,
-  instant: 10,
-};
-
-export const DRAFT_STRATEGIES = [
-  { id: "Balanced", label: "Balanced" },
-  { id: "Aggressive", label: "Aggressive" },
-  { id: "Passive", label: "Passive" },
-  { id: "Scaling", label: "Scaling" },
-  { id: "CounterPick", label: "Counter Pick" },
-  { id: "PriorityBans", label: "Priority Bans" },
-];
